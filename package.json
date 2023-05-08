@@ -1,0 +1,58 @@
+{
+  "name": "test-ts-package-kit2",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "",
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gksander/test-ts-package-kit2"
+  },
+  "homepage": "",
+  "keywords": [],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": [
+      {
+        "import": "./dist/index.mjs",
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "./dist/index.js"
+    ],
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test:watch": "vitest",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --quiet",
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "dev": "pnpm run build:watch",
+    "check:ci": "pnpm run typecheck && pnpm run lint && pnpm run test",
+    "changeset": "changeset",
+    "version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@svitejs/changesets-changelog-github-compact": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.4",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4",
+    "vitest": "^0.28.5"
+  }
+}
