@@ -1,3 +1,3 @@
 export const shout = () => {
-  return "Hello world!";
+  return "foobar!";
 };
