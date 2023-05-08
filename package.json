@@ -40,7 +40,8 @@
     "check:ci": "pnpm run typecheck && pnpm run lint && pnpm run test",
     "changeset": "changeset",
     "version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "publish": "NPM_CONFIG_PROVENANCE=true pnpm run changeset publish"
   },
   "dependencies": {},
   "devDependencies": {
